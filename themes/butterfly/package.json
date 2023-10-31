@@ -23,6 +23,7 @@
     "email": "my@crazywong.com"
   },
   "dependencies": {
+    "hexo-algoliasearch": "^1.0.0",
     "hexo-renderer-pug": "^3.0.0",
     "hexo-renderer-stylus": "^3.0.0",
     "hexo-wordcount": "^6.0.1"

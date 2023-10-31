@@ -4,9 +4,9 @@ tags: hello world
 categories: hello world
 keywords: hello world
 description: this is a description of hello world
-top_img:
+top_img: /img/background.jpg
 comments:
-cover:
+cover: /img/background.jpg
 toc:
 toc_number:
 toc_style_simple:
