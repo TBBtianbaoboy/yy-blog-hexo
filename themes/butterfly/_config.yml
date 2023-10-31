@@ -42,13 +42,13 @@ social: # TODO
 # 图片设置
 # --------------------------------------
 
-# 网站图表
+# 网站图标
 favicon: /img/icon.jpg
 
 # 我的头像
 avatar:
   img: /img/icon.jpg # img 图片, 可以是 URL
-  effect: true # 是否一直旋转
+  effect: false # 是否一直旋转
 
 # Disable all banner image
 disable_top_img: false
@@ -773,7 +773,7 @@ preloader:
   # source
   # 1. fullpage-loading
   # 2. pace (progress bar)
-  source: 1
+  source: false
   # pace theme (see https://codebyzach.github.io/pace/)
   pace_css_url:
 
