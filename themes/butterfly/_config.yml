@@ -3,50 +3,52 @@
 # --------------------------------------
 
 nav:
-  logo: # image
-  display_title: true
-  fixed: false # fixed navigation bar
+  logo: # image # 网站的 logo
+  display_title: true # 是否显示网站标题
+  fixed: false # 是否固定状态栏
 
-# Menu 目錄
+# 主页菜单设置
+#---------------------------------------
 menu:
   主页: / || fas fa-home
   归档: /archives/ || fas fa-archive
-  Tags: /tags/ || fas fa-tags
-  Categories: /categories/ || fas fa-folder-open
-  List||fas fa-list:
-    Music: /music/ || fas fa-music
-    Movie: /movies/ || fas fa-video
-  Link: /link/ || fas fa-link
+  标签: /tags/ || fas fa-tags
+  分类: /categories/ || fas fa-folder-open
+  # List||fas fa-list:
+  #   Music: /music/ || fas fa-music
+  #   Movie: /movies/ || fas fa-video
+  友情链接: /link/ || fas fa-link
   工具箱: /tools/ || fas fa-toolbox
   关于: /about/ || fas fa-heart
 
-# Code Blocks (代碼相關)
+# 代码块设置
 # --------------------------------------
 
 highlight_theme: light #  darker / pale night / light / ocean / mac / mac light / false
-highlight_copy: true # copy button
-highlight_lang: true # show the code language
-highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
-highlight_height_limit: 200 # unit: px
+highlight_copy: true # 显示拷贝按钮
+highlight_lang: true # 显示代码语言
+highlight_shrink: false # true: 收缩代码块，点击按钮展开 / false: 自动展开代码块 | none: 展开代码块，而且隐藏点击按钮
+highlight_height_limit: 100 # unit: px
 code_word_wrap: false
 
 # Social Settings (社交圖標設置)
 # formal:
 #   icon: link || the description || color
-social:
+social: # TODO
   fab fa-github: https://github.com/TBBtianbaoboy || Github || '#24292e'
-  fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
+  fas fa-envelope: mailto:2237616014@qq.com || Email || '#4a7dbe'
 
-# Image (圖片設置)
+
+# 图片设置
 # --------------------------------------
 
-# Favicon（網站圖標）
-favicon: /img/favicon.png
+# 网站图表
+favicon: /img/icon.jpg
 
-# Avatar (頭像)
+# 我的头像
 avatar:
-  img: https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png
-  effect: false
+  img: /img/icon.jpg # img 图片, 可以是 URL
+  effect: true # 是否一直旋转
 
 # Disable all banner image
 disable_top_img: false
@@ -55,7 +57,8 @@ disable_top_img: false
 index_img:
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: 'linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)'
+# default_top_img: 'linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)'
+default_top_img: /img/background.jpg
 
 # The banner image of archive page
 archive_img:
