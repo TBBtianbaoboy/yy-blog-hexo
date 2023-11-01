@@ -28,7 +28,7 @@ highlight_theme: light #  darker / pale night / light / ocean / mac / mac light 
 highlight_copy: true # 显示拷贝按钮
 highlight_lang: true # 显示代码语言
 highlight_shrink: false # true: 收缩代码块，点击按钮展开 / false: 自动展开代码块 | none: 展开代码块，而且隐藏点击按钮
-highlight_height_limit: 100 # unit: px
+highlight_height_limit: false # unit: px
 code_word_wrap: false
 
 # Social Settings (社交圖標設置)

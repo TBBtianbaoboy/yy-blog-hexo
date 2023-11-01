@@ -43,6 +43,8 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
+#-------------------
+# 代码块高亮设置
 highlight:
   enable: true
   line_number: true
@@ -55,6 +57,7 @@ prismjs:
   preprocess: true
   line_number: true
   tab_replace: ''
+#-------------------
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')

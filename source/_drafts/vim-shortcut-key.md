@@ -19,20 +19,34 @@ aside:
 abcjs:
 ---
 
-## Hexo 内置标签
+## 1 Hexo 内置标签
 
-### codeblock
+Hexo 内置标签用于在文章中插入相应的内容。
 
-{% codeblock struct_test https://www.hao123.com hao123 lang:cpp mark:1,4-7,10 %}
-typedef struct {
-uint8_t edge_padding_flag; ///< 0: disable, 1: enable
-uint8_t padding_value_r; ///< r or y
-uint8_t padding_value_g; ///< g or u
-uint8_t padding_value_b; ///< b or v
-uint32_t edge_top; ///< top edge in pixel
-uint32_t edge_bottom; ///< bottom edge in pixel
-uint32_t edge_left; ///< left edge in pixel
-uint32_t edge_right; ///< right edge in pixel
-EdgePaddingTypeUint32_t edge_padding_type; ///< only EDGE_PADDING_TYPE_CONSTANT valid
-} image_edge_padding_t; // corresponding to copyMakeBorder in openCV.
+### 1.1 代码块
+Hexo 有三种方式在文章中插入代码块, 这三种方式呈现相同的效果。
+
+- codeblock
+
+``` md
+{% codeblock [title] [link_url] [link_text] [lang:language] [additional options] %}
+code snippet
 {% endcodeblock %}
+```
+- code
+
+``` md
+{% code [title] [link_url] [link_text] [lang:language] [additional options] %}
+code snippet
+{% endcode %}
+```
+
+- 反引号
+
+TODO
+{% code lang:md %}
+``` [language] [title] [link_url] [link_text] 
+code snippet
+```
+{% endcode %}
+
