@@ -100,9 +100,13 @@ ignore:
 theme: butterfly
 
 # Deployment
+## npm install hexo-deployer-git --save
 ## Docs: https://hexo.io/docs/one-command-deployment
+## hexo deploy -m "custom comment"
 deploy:
-  type: ''
+  type: git
+  repo: git@github.com:TBBtianbaoboy/tbbtianbaoboy.github.io.git
+  branch: master
 
 search:
   path: search.xml
