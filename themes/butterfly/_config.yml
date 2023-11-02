@@ -19,6 +19,7 @@ menu:
   #   Movie: /movies/ || fas fa-video
   友情链接: /link/ || fas fa-link
   工具箱: /tools/ || fas fa-toolbox
+  生活小屋: /lives/ || fas fa-toolbox
   关于: /about/ || fas fa-heart
 
 # 代码块设置
@@ -803,7 +804,7 @@ medium_zoom: false
 
 # fancybox
 # https://fancyapps.com/fancybox/
-fancybox: true
+fancybox: false
 
 # Tag Plugins settings (標籤外掛)
 # --------------------------------------

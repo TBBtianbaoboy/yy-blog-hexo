@@ -214,3 +214,256 @@ center/right/留空
    <img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/heartmate_lite.png'>
    </a>
    {% endbtns %}
+
+### 3.7 行内文本样式 text
+
+1. 带 {% u 下划线 %} 的文本
+2. 带 {% emp 着重号 %} 的文本
+3. 带 {% wavy 波浪线 %} 的文本
+4. 带 {% del 删除线 %} 的文本
+5. 键盘样式的文本 {% kbd command %} + {% kbd D %}
+6. 密码样式的文本：{% psw 这里没有验证码 %}
+
+### 3.8 行内文本 span
+
+- 彩色文字
+  在一段话中方便插入各种颜色的标签，包括：{% span red, 红色 %}、{% span yellow, 黄色 %}、{% span green, 绿色 %}、{% span cyan, 青色 %}、{% span blue, 蓝色 %}、{% span gray, 灰色 %}。
+- 超大号文字
+  文档「开始」页面中的标题部分就是超大号文字。
+  {% span center logo large, Volantis %}
+  {% span center small, A Wonderful Theme for Hexo %}
+
+### 3.9 note
+
+{% note 'fab fa-cc-visa' flat %}你是刷 Visa 还是 UnionPay{% endnote %}
+
+{% note blue 'fas fa-bullhorn' flat %}2021 年快到了....{% endnote %}
+
+{% note pink 'fas fa-car-crash' flat %}小心开车 安全至上{% endnote %}
+
+{% note red 'fas fa-fan' flat%}这是三片呢？还是四片？{% endnote %}
+
+{% note orange 'fas fa-battery-half' flat %}你是刷 Visa 还是 UnionPay{% endnote %}
+
+{% note purple 'far fa-hand-scissors' flat %}剪刀石头布{% endnote %}
+
+{% note green 'fab fa-internet-explorer' flat %}前端最讨厌的浏览器{% endnote %}
+
+### 3.10 tip
+
+{% tip %}default{% endtip %}
+{% tip info %}info{% endtip %}
+{% tip success %}success{% endtip %}
+{% tip error %}error{% endtip %}
+{% tip warning %}warning{% endtip %}
+{% tip bolt %}bolt{% endtip %}
+{% tip ban %}ban{% endtip %}
+{% tip home %}home{% endtip %}
+{% tip sync %}sync{% endtip %}
+{% tip cogs %}cogs{% endtip %}
+{% tip key %}key{% endtip %}
+{% tip bell %}bell{% endtip %}
+{% tip fa-atom %}自定义 font awesome 图标{% endtip %}
+
+### 3.11 动态标签
+
+{% tip warning faa-horizontal animated-hover %}warning{% endtip %}
+{% tip ban faa-flash animated-hover %}ban{% endtip %}
+
+### 3.12 checkbox
+
+{% checkbox 纯文本测试 %}
+{% checkbox checked, 支持简单的 [markdown](https://guides.github.com/features/mastering-markdown/) 语法 %}
+{% checkbox red, 支持自定义颜色 %}
+{% checkbox green checked, 绿色 + 默认选中 %}
+{% checkbox yellow checked, 黄色 + 默认选中 %}
+{% checkbox cyan checked, 青色 + 默认选中 %}
+{% checkbox blue checked, 蓝色 + 默认选中 %}
+{% checkbox plus green checked, 增加 %}
+{% checkbox minus yellow checked, 减少 %}
+{% checkbox times red checked, 叉 %}
+
+### 3.13 单选列表 radio
+
+{% radio 纯文本测试 %}
+{% radio checked, 支持简单的 [markdown](https://guides.github.com/features/mastering-markdown/) 语法 %}
+{% radio red, 支持自定义颜色 %}
+{% radio green, 绿色 %}
+{% radio yellow, 黄色 %}
+{% radio cyan, 青色 %}
+{% radio blue, 蓝色 %}
+
+### 3.14 timeline
+
+{% timeline 时间轴样式,blue %}
+
+<!-- timeline 2020-07-24 [2.6.6 -> 3.0](https://github.com/volantis-x/hexo-theme-volantis/releases) -->
+
+1. 如果有 `hexo-lazyload-image` 插件，需要删除并重新安装最新版本，设置 `lazyload.isSPA: true`。
+2. 2.x 版本的 css 和 js 不适用于 3.x 版本，如果使用了 `use_cdn: true` 则需要删除。
+3. 2.x 版本的 fancybox 标签在 3.x 版本中被重命名为 gallery 。
+4. 2.x 版本的置顶 `top: true` 改为了 `pin: true`，并且同样适用于 `layout: page` 的页面。
+5. 如果使用了 `hexo-offline` 插件，建议卸载，3.0 版本默认开启了 pjax 服务。
+
+<!-- endtimeline -->
+
+<!-- timeline 2020-05-15 [2.6.3 -> 2.6.6](https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.6) -->
+
+不需要额外处理。
+
+<!-- endtimeline -->
+
+<!-- timeline 2020-04-20 [2.6.2 -> 2.6.3](https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3) -->
+
+1. 全局搜索 `seotitle` 并替换为 `seo_title`。
+2. group 组件的索引规则有变，使用 group 组件的文章内，`group: group_name` 对应的组件名必须是 `group_name`。
+3. group 组件的列表名优先显示文章的 `short_title` 其次是 `title`。
+
+<!-- endtimeline -->
+
+{% endtimeline %}
+
+### 3.15 inlineimage
+
+这是 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/0000.gif %} 一段话。
+
+这又是 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %} 一段话。
+
+### 3.16 audio
+
+{% audio https://github.com/volantis-x/volantis-docs/releases/download/assets/Lumia1020.mp3 %}
+
+### 3.17 video
+
+{% videos, 2 %}
+{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% endvideos %}
+
+### 3.18 folding
+
+{% folding 查看图片测试 %}
+
+![](https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg)
+
+{% endfolding %}
+
+{% folding cyan open, 查看默认打开的折叠框 %}
+
+这是一个默认打开的折叠框。
+
+{% endfolding %}
+
+{% folding green, 查看代码测试 %}
+假装这里有代码块（代码块没法嵌套代码块）
+{% endfolding %}
+
+{% folding yellow, 查看列表测试 %}
+
+- haha
+- hehe
+
+{% endfolding %}
+
+{% folding red, 查看嵌套测试 %}
+
+{% folding blue, 查看嵌套测试2 %}
+
+{% folding 查看嵌套测试3 %}
+
+hahaha <span><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/tieba/%E6%BB%91%E7%A8%BD.png' style='height:24px'></span>
+
+{% endfolding %}
+
+{% endfolding %}
+
+{% endfolding %}
+
+### 3.19 tabs
+
+{% tabs test4,2 %}
+
+<!-- tab 第一个Tab -->
+
+**tab 名字为第一个 Tab**
+
+<!-- endtab -->
+
+<!-- tab @fab fa-apple-pay -->
+
+**只有图标 没有 Tab 名字**
+
+<!-- endtab -->
+
+<!-- tab 炸弹@fas fa-bomb -->
+
+**名字+icon**
+
+<!-- endtab -->
+
+{% endtabs %}
+
+### 3.20 alibaba icon
+
+{% icon icon-rat_zi %}{% icon icon-rat,2 %}
+
+{% icon icon-ox_chou,3 %}{% icon icon-ox,4 %}
+
+{% icon icon-tiger_yin,5 %}{% icon icon-tiger,6 %}
+
+{% icon icon-rabbit_mao,1 %}{% icon icon-rabbit,2 %}
+
+{% icon icon-dragon_chen,3 %}{% icon icon-dragon,4 %}
+
+{% icon icon-snake_si,5 %}{% icon icon-snake,6 %}
+
+{% icon icon-horse_wu %}{% icon icon-horse,2 %}
+
+{% icon icon-goat_wei,3 %}{% icon icon-goat,4 %}
+
+{% icon icon-monkey_shen,5 %}{% icon icon-monkey,6 %}
+
+{% icon icon-rooster_you %}{% icon icon-rooster,2 %}
+
+{% icon icon-dog_xu,3 %}{% icon icon-dog,4 %}
+
+{% icon icon-boar_hai,5 %}{% icon icon-boar,6 %}
+
+### 3.21 气泡注释 bubble
+
+最近我学到了不少新玩意儿（虽然对很多大佬来说这些已经是旧技术了），比如 CSS 的{% bubble 兄弟相邻选择器,"例如 h1 + p {margin-top:50px;}" %}，{% bubble flex布局,"Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性","#ec5830" %}，{% bubble transform变换,"transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。","#1db675" %}，animation 的{% bubble 贝塞尔速度曲线,"贝塞尔曲线(Bézier curve)，又称贝兹曲线或贝济埃曲线，是应用于二维图形应用程序的数学曲线。一般的矢量图形软件通过它来精确画出曲线，贝兹曲线由线段与节点组成，节点是可拖动的支点，线段像可伸缩的皮筋","#de4489" %}写法，还有今天刚看到的{% bubble clip-path,"clip-path属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。","#868fd7" %}属性。这些对我来说很新颖的概念狠狠的冲击着我以前积累起来的设计思路。
+
+### 3.22 reference
+
+Akilar の糖果屋(akilar.top)是一个私人性质的博客{% referto '[1]','Akilarの糖果屋群聊简介' %}，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用 Hexo 框架{% referto '[2]','Hexo中文文档' %}，Butterfly 主题{% referto '[3]','Butterfly 安装文档(一) 快速开始' %}
+
+本项目参考了 Volantis{% referto '[4]','hexo-theme-volantis 标签插件' %}的标签样式。引入`[tag].js`，并针对`butterfly`主题修改了相应的`[tag].styl`。在此鸣谢`Volantis`主题众开发者。
+主要参考内容包括各个 volantis 的内置标签插件文档{% referto '[5]','Volantis文档:内置标签插件' %}
+Butterfly 主题的各个衍生魔改{% referto '[6]','Butterfly 安装文档:标签外挂（Tag Plugins' %}{% referto '[7]','小弋の生活馆全样式预览' %}{% referto '[8]','l-lin-font-awesome-animation' %}{% referto '[9]','小康的butterfly主题使用文档' %}
+
+{% referfrom '[1]','Akilarの糖果屋群聊简介','https://jq.qq.com/?_wv=1027&k=pGLB2C0N' %}
+{% referfrom '[2]','Hexo中文文档','https://hexo.io/zh-cn/docs/' %}
+{% referfrom '[3]','Butterfly 安装文档(一) 快速开始','https://butterfly.js.org/posts/21cfbf15/' %}
+{% referfrom '[4]','hexo-theme-volantis 标签插件','https://volantis.js.org/v5/tag-plugins/' %}
+{% referfrom '[5]','Volantis文档:内置标签插件','https://volantis.js.org/tag-plugins/' %}
+{% referfrom '[6]','Butterfly 安装文档:标签外挂（Tag Plugins','https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89' %}
+{% referfrom '[7]','小弋の生活馆全样式预览','https://lovelijunyi.gitee.io/posts/c898.html' %}
+{% referfrom '[8]','l-lin-font-awesome-animation','https://github.com/l-lin/font-awesome-animation' %}
+{% referfrom '[9]','小康的butterfly主题使用文档','https://www.antmoe.com/posts/3b43914f/' %}
+
+### 3.23 旋转相册 carousel
+
+{% carousel 'SF','strike freedom' %}
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png)
+{% endcarousel %}

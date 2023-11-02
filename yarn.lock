@@ -1543,7 +1543,7 @@
 
 "hexo-butterfly-tag-plugins-plus@^1.0.17":
   "integrity" "sha512-GpQS8YiEFv989kclBedKaRBhzA8yx+Boq/v04Nn04KCibnhv5EJj5E/OV3QXz1jw8mCwGlOyiL7xVSqA6KyRQQ=="
-  "resolved" "https://registry.npmjs.org/hexo-butterfly-tag-plugins-plus/-/hexo-butterfly-tag-plugins-plus-1.0.17.tgz"
+  "resolved" "https://registry.npmmirror.com/hexo-butterfly-tag-plugins-plus/-/hexo-butterfly-tag-plugins-plus-1.0.17.tgz"
   "version" "1.0.17"
 
 "hexo-cli@^4.3.0":
@@ -1714,7 +1714,7 @@
 
 "hexo-renderer-kramed@^0.1.4":
   "integrity" "sha512-DBiOuWUtmNF52xVc6jCAtOxX1n/K+4a3bizHXyV5yE8c9itASr/nxwGl0CUeZBNOKQu9CvjXYc+qgs/jgDxI7w=="
-  "resolved" "https://registry.npmjs.org/hexo-renderer-kramed/-/hexo-renderer-kramed-0.1.4.tgz"
+  "resolved" "https://registry.npmmirror.com/hexo-renderer-kramed/-/hexo-renderer-kramed-0.1.4.tgz"
   "version" "0.1.4"
   dependencies:
     "hexo-util" "^0.6.0"
