@@ -19,13 +19,12 @@ aside:
 abcjs:
 ---
 
-{% note primary %}
-`[ ]` 中的参数是可选的，`< >` 中的参数是必选的。
+{% note blue 'fas fa-bullhorn' flat %}`[ ]` 中的参数是可选的，`< >` 中的参数是必选的。
 {% endnote %}
 
-## 1 Hexo 原生标签外挂
+## Hexo 原生标签外挂
 
-### 1.1 代码块
+### 代码块
 
 Hexo 有两种方式在文章中插入代码块, 这两种方式呈现相同的效果。
 
@@ -108,44 +107,93 @@ return 0;
 
 > 个人推荐使用 `反引号` 的方式。
 
-### 1.2 link
+### link
 
-### 1.3 iframe
+### iframe
 
-## 2 Hexo Bufferfly 主题标签外挂
+## Hexo Bufferfly 主题标签外挂
 
-### 2.1 button
+### button
+
+## 第三方插件标签外挂
+
+### link
+
+{% folding blue, 展开说明 %}
+**语法**
 
 ```md
-{% btn <url>,<text>,[icon],[color] [style] [layout] [position] [size] %}
-
-[url] : 链接
-[text] : 按钮文字
-[icon] : [可選] 圖標
-[color] : [可選] 按鈕背景顔色(默認 style 時） 按鈕字體和邊框顔色(outline 時)
-default/blue/pink/red/purple/orange/green
-[style] : [可選] 按鈕樣式 默認實心
-outline/留空
-[layout] : [可選] 按鈕佈局 默認為 line
-block/留空
-[position] : [可選] 按鈕位置 前提是設置了 layout 為 block 默認為左邊
-center/right/留空
-[size] : [可選] 按鈕大小 larger/留空
+{% link <标题>, <链接>, [图片链接] %}
 ```
 
-{% btn https://github.com, Github, fa fa-github, outline block center larger green %}
+**举例**
 
-## 3 第三方插件标签外挂
+```md
+{% link 糖果屋教程贴, https://akilar.top/posts/615e2dec/, https://cdn.jsdelivr.net/gh/Akilarlxh/akilarlxh.github.io/img/siteicon/favicon.ico %}
+```
 
-### 3.1 link
+**预览**
 
 {% link 糖果屋教程贴, https://akilar.top/posts/615e2dec/, https://cdn.jsdelivr.net/gh/Akilarlxh/akilarlxh.github.io/img/siteicon/favicon.ico %}
 
-### 3.2 notation
+{% endfolding %}
+
+### notation
+
+{% folding blue, 展开说明 %}
+**语法**
+
+```md
+{% nota <label>,<text> %}
+
+label: 文章中的标签
+text: 注解内容
+```
+
+**举例**
+
+```md
+{% nota 把鼠标移动到我上面试试 ,可以看到注解内容出现在顶栏 %}
+```
+
+**预览**
 
 {% nota 把鼠标移动到我上面试试 ,可以看到注解内容出现在顶栏 %}
+{% endfolding %}
 
-### 3.3 poem
+### poem
+
+{% folding blue, 展开说明 %}
+
+**语法**
+
+```md
+{% poem [title],[author] %}
+诗词内容
+{% endpoem %}
+
+title: 诗词标题
+author: 诗词作者
+```
+
+**举例**
+
+```md
+{% poem 水调歌头,苏轼 %}
+丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。
+明月几时有？把酒问青天。
+不知天上宫阙，今夕是何年？
+我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
+起舞弄清影，何似在人间？
+
+转朱阁，低绮户，照无眠。
+不应有恨，何事长向别时圆？
+人有悲欢离合，月有阴晴圆缺，此事古难全。
+但愿人长久，千里共婵娟。
+{% endpoem %}
+```
+
+**预览**
 
 {% poem 水调歌头,苏轼 %}
 丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。
@@ -159,8 +207,33 @@ center/right/留空
 人有悲欢离合，月有阴晴圆缺，此事古难全。
 但愿人长久，千里共婵娟。
 {% endpoem %}
+{% endfolding %}
 
-### 3.4 progress
+### progress
+
+{% folding blue, 展开说明 %}
+**语法**
+
+```md
+{% progress <width> <color> <text> %}
+
+width: 进度条进度，取值范围 0-100
+color: 进度条颜色，取值范围 red,yellow,green,cyan,blue,gray
+text: 进度条右侧的文本
+```
+
+**举例**
+
+```md
+{% progress 10 red 进度条样式预览 %}
+{% progress 30 yellow 进度条样式预览 %}
+{% progress 50 green 进度条样式预览 %}
+{% progress 70 cyan 进度条样式预览 %}
+{% progress 90 blue 进度条样式预览 %}
+{% progress 100 gray 进度条样式预览 %}
+```
+
+**预览**
 
 {% progress 10 red 进度条样式预览 %}
 {% progress 30 yellow 进度条样式预览 %}
@@ -168,9 +241,23 @@ center/right/留空
 {% progress 70 cyan 进度条样式预览 %}
 {% progress 90 blue 进度条样式预览 %}
 {% progress 100 gray 进度条样式预览 %}
+{% endfolding %}
 
-### 3.5 sitegroup
+### sitegroup
 
+{% folding blue, 展开说明 %}
+**语法**
+
+```md
+{% sitegroup %}
+{% site 标题, url=链接, screenshot=截图链接, avatar=头像链接（可选）, description=描述（可选） %}
+{% site 标题, url=链接, screenshot=截图链接, avatar=头像链接（可选）, description=描述（可选） %}
+{% endsitegroup %}
+```
+
+**举例**
+
+```md
 {% sitegroup %}
 {% site xaoxuu, url=https://xaoxuu.com, screenshot=https://i.loli.net/2020/08/21/VuSwWZ1xAeUHEBC.jpg, avatar=https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png, description=简约风格 %}
 {% site inkss, url=https://inkss.cn, screenshot=https://i.loli.net/2020/08/21/Vzbu3i8fXs6Nh5Y.jpg, avatar=https://cdn.jsdelivr.net/gh/inkss/common@master/static/web/avatar.jpg, description=这是一段关于这个网站的描述文字 %}
@@ -178,10 +265,58 @@ center/right/留空
 {% site Colsrch, url=https://colsrch.top, screenshot=https://i.loli.net/2020/08/22/dFRWXm52OVu8qfK.png, avatar=https://cdn.jsdelivr.net/gh/Colsrch/images/Colsrch/avatar.jpg, description=这是一段关于这个网站的描述文字 %}
 {% site Linhk1606, url=https://linhk1606.github.io, screenshot=https://i.loli.net/2020/08/21/3PmGLCKicnfow1x.png, avatar=https://i.loli.net/2020/02/09/PN7I5RJfFtA93r2.png, description=这是一段关于这个网站的描述文字 %}
 {% endsitegroup %}
+```
 
-### 3.6 button
+**预览**
+{% sitegroup %}
+{% site xaoxuu, url=https://xaoxuu.com, screenshot=https://i.loli.net/2020/08/21/VuSwWZ1xAeUHEBC.jpg, avatar=https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/avatar/avatar.png, description=简约风格 %}
+{% site inkss, url=https://inkss.cn, screenshot=https://i.loli.net/2020/08/21/Vzbu3i8fXs6Nh5Y.jpg, avatar=https://cdn.jsdelivr.net/gh/inkss/common@master/static/web/avatar.jpg, description=这是一段关于这个网站的描述文字 %}
+{% site MHuiG, url=https://blog.mhuig.top, screenshot=https://i.loli.net/2020/08/22/d24zpPlhLYWX6D1.png, avatar=https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/p.png, description=这是一段关于这个网站的描述文字 %}
+{% site Colsrch, url=https://colsrch.top, screenshot=https://i.loli.net/2020/08/22/dFRWXm52OVu8qfK.png, avatar=https://cdn.jsdelivr.net/gh/Colsrch/images/Colsrch/avatar.jpg, description=这是一段关于这个网站的描述文字 %}
+{% site Linhk1606, url=https://linhk1606.github.io, screenshot=https://i.loli.net/2020/08/21/3PmGLCKicnfow1x.png, avatar=https://i.loli.net/2020/02/09/PN7I5RJfFtA93r2.png, description=这是一段关于这个网站的描述文字 %}
+{% endsitegroup %}
+{% endfolding %}
+
+### button
+
+{% folding blue, 展开说明 %}
+**语法**
+
+```md
+{% btns 样式参数 %}
+{% cell 标题, 链接, 图片或者图标 %}
+{% cell 标题, 链接, 图片或者图标 %}
+{% endbtns %}
+
+样式参数:
+圆角样式：rounded, circle
+
+其他参数:
+wide 宽一点的按钮
+fill 填充布局，自动铺满至少一行，多了会换行
+center 居中，按钮之间是固定间距
+around 居中分散
+grid2 等宽最多 2 列，屏幕变窄会适当减少列数
+grid3 等宽最多 3 列，屏幕变窄会适当减少列数
+grid4 等宽最多 4 列，屏幕变窄会适当减少列数
+grid5 等宽最多 5 列，屏幕变窄会适当减少列数
+```
 
 1. 如果需要显示类似「团队成员」之类的一组含有头像的链接：
+
+   **举例**
+
+   ```md
+   {% btns circle grid5 %}
+   {% cell MaraPython, https://marapython.com, https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/avatar.jpg %}
+   {% cell MaraPython, https://marapython.com, https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/avatar.jpg %}
+   {% cell MaraPython, https://marapython.com, https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/avatar.jpg %}
+   {% cell MaraPython, https://marapython.com, https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/avatar.jpg %}
+   {% cell MaraPython, https://marapython.com, https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/avatar.jpg %}
+   {% endbtns %}
+   ```
+
+   **预览**
 
    {% btns circle grid5 %}
    {% cell MaraPython, https://marapython.com, https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/avatar.jpg %}
@@ -193,29 +328,36 @@ center/right/留空
 
 2. 或者含有图标的按钮：
 
+   **举例**
+
+   ```md
+   {% btns rounded grid5 %}
+   {% cell 下载源码, /, fa fa-download %}
+   {% cell 查看文档, /, fa fa-book %}
+   {% endbtns %}
+   ```
+
+   **预览**
+
    {% btns rounded grid5 %}
    {% cell 下载源码, /, fa fa-download %}
    {% cell 查看文档, /, fa fa-book %}
    {% endbtns %}
 
-3. 圆形图标 + 标题 + 描述 + 图片 + 网格 5 列 + 居中
+{% endfolding %}
 
-   {% btns circle center grid5 %}
-   <a href='https://apps.apple.com/cn/app/heart-mate-pro-hrm-utility/id1463348922?ls=1'>
-   <i class='fab fa-apple'></i>
-   <b>心率管家</b>
-   {% p red, 专业版 %}
-   <img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/heartmate_pro.png'>
-   </a>
-   <a href='https://apps.apple.com/cn/app/heart-mate-lite-hrm-utility/id1475747930?ls=1'>
-   <i class='fab fa-apple'></i>
-   <b>心率管家</b>
-   {% p green, 免费版 %}
-   <img src='https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/qrcode/heartmate_lite.png'>
-   </a>
-   {% endbtns %}
+### 行内文本样式 text
 
-### 3.7 行内文本样式 text
+{% folding blue, 展开说明 %}
+
+```md
+1. 带 {% u 下划线 %} 的文本
+2. 带 {% emp 着重号 %} 的文本
+3. 带 {% wavy 波浪线 %} 的文本
+4. 带 {% del 删除线 %} 的文本
+5. 键盘样式的文本 {% kbd command %} + {% kbd D %}
+6. 密码样式的文本：{% psw 这里没有验证码 %}
+```
 
 1. 带 {% u 下划线 %} 的文本
 2. 带 {% emp 着重号 %} 的文本
@@ -223,8 +365,35 @@ center/right/留空
 4. 带 {% del 删除线 %} 的文本
 5. 键盘样式的文本 {% kbd command %} + {% kbd D %}
 6. 密码样式的文本：{% psw 这里没有验证码 %}
+   {% endfolding %}
 
-### 3.8 行内文本 span
+### 行内文本 span
+
+{% folding blue, 展开说明 %}
+**语法**
+
+```md
+{% span 样式参数(参数以空格划分), 文本内容 %}
+
+样式参数:
+字体: logo, code
+颜色: red,yellow,green,cyan,blue,gray
+大小: small, h4, h3, h2, h1, large, huge, ultra
+对齐方向: left, center, right
+```
+
+**举例**
+
+```md
+- 彩色文字
+  在一段话中方便插入各种颜色的标签，包括：{% span red, 红色 %}、{% span yellow, 黄色 %}、{% span green, 绿色 %}、{% span cyan, 青色 %}、{% span blue, 蓝色 %}、{% span gray, 灰色 %}。
+- 超大号文字
+  文档「开始」页面中的标题部分就是超大号文字。
+  {% span center logo large, Volantis %}
+  {% span center small, A Wonderful Theme for Hexo %}
+```
+
+**预览**
 
 - 彩色文字
   在一段话中方便插入各种颜色的标签，包括：{% span red, 红色 %}、{% span yellow, 黄色 %}、{% span green, 绿色 %}、{% span cyan, 青色 %}、{% span blue, 蓝色 %}、{% span gray, 灰色 %}。
@@ -232,8 +401,47 @@ center/right/留空
   文档「开始」页面中的标题部分就是超大号文字。
   {% span center logo large, Volantis %}
   {% span center small, A Wonderful Theme for Hexo %}
+  {% endfolding %}
 
-### 3.9 note
+### note
+
+{% folding blue, 展开说明 %}
+**语法**
+
+```md
+{% note [color] [icon] [style] %}
+Any content (support inline tags too.io).
+{% endnote %}
+
+样式参数:
+color: default / blue / pink / red / purple / orange / green
+icon: 参考 font awesome 图标
+style: simple/modern/flat/disabled
+```
+
+{% btns circle grid5 %}
+{% cell font awesome 图标, https://fontawesome.com/icons, fa-solid fa-font-awesome %}
+{% endbtns %}
+
+**举例**
+
+```md
+{% note 'fab fa-cc-visa' flat %}你是刷 Visa 还是 UnionPay{% endnote %}
+
+{% note blue 'fas fa-bullhorn' flat %}2021 年快到了....{% endnote %}
+
+{% note pink 'fas fa-car-crash' flat %}小心开车 安全至上{% endnote %}
+
+{% note red 'fas fa-fan' flat%}这是三片呢？还是四片？{% endnote %}
+
+{% note orange 'fas fa-battery-half' flat %}你是刷 Visa 还是 UnionPay{% endnote %}
+
+{% note purple 'far fa-hand-scissors' flat %}剪刀石头布{% endnote %}
+
+{% note green 'fab fa-internet-explorer' flat %}前端最讨厌的浏览器{% endnote %}
+```
+
+**预览**
 
 {% note 'fab fa-cc-visa' flat %}你是刷 Visa 还是 UnionPay{% endnote %}
 
@@ -248,8 +456,39 @@ center/right/留空
 {% note purple 'far fa-hand-scissors' flat %}剪刀石头布{% endnote %}
 
 {% note green 'fab fa-internet-explorer' flat %}前端最讨厌的浏览器{% endnote %}
+{% endfolding %}
 
-### 3.10 tip
+### tip
+
+{% folding blue, 展开说明 %}
+**语法**
+
+```md
+{% tip [样式] %}文本内容{% endtip %}
+
+样式: info, success, error, warning, bolt, ban, home, sync, cogs, key, bell
+样式也可以是 font awesome 图标
+```
+
+**举例**
+
+```md
+{% tip %}default{% endtip %}
+{% tip info %}info{% endtip %}
+{% tip success %}success{% endtip %}
+{% tip error %}error{% endtip %}
+{% tip warning %}warning{% endtip %}
+{% tip bolt %}bolt{% endtip %}
+{% tip ban %}ban{% endtip %}
+{% tip home %}home{% endtip %}
+{% tip sync %}sync{% endtip %}
+{% tip cogs %}cogs{% endtip %}
+{% tip key %}key{% endtip %}
+{% tip bell %}bell{% endtip %}
+{% tip fa-atom %}自定义 font awesome 图标{% endtip %}
+```
+
+**预览**
 
 {% tip %}default{% endtip %}
 {% tip info %}info{% endtip %}
@@ -265,12 +504,37 @@ center/right/留空
 {% tip bell %}bell{% endtip %}
 {% tip fa-atom %}自定义 font awesome 图标{% endtip %}
 
-### 3.11 动态标签
+{% endfolding %}
 
-{% tip warning faa-horizontal animated-hover %}warning{% endtip %}
-{% tip ban faa-flash animated-hover %}ban{% endtip %}
+### checkbox
 
-### 3.12 checkbox
+{% folding blue, 展开说明 %}
+**语法**
+
+```md
+{% checkbox [参数], 文本（支持简单md） %}
+
+样式: plus, minus, times
+颜色: red,yellow,green,cyan,blue,gray
+选中状态: checked
+```
+
+**举例**
+
+```md
+{% checkbox 纯文本测试 %}
+{% checkbox checked, 支持简单的 [markdown](https://guides.github.com/features/mastering-markdown/) 语法 %}
+{% checkbox red, 支持自定义颜色 %}
+{% checkbox green checked, 绿色 + 默认选中 %}
+{% checkbox yellow checked, 黄色 + 默认选中 %}
+{% checkbox cyan checked, 青色 + 默认选中 %}
+{% checkbox blue checked, 蓝色 + 默认选中 %}
+{% checkbox plus green checked, 增加 %}
+{% checkbox minus yellow checked, 减少 %}
+{% checkbox times red checked, 叉 %}
+```
+
+**预览**
 
 {% checkbox 纯文本测试 %}
 {% checkbox checked, 支持简单的 [markdown](https://guides.github.com/features/mastering-markdown/) 语法 %}
@@ -283,7 +547,33 @@ center/right/留空
 {% checkbox minus yellow checked, 减少 %}
 {% checkbox times red checked, 叉 %}
 
-### 3.13 单选列表 radio
+{% endfolding %}
+
+### 单选列表 radio
+
+{% folding blue, 展开说明 %}
+**语法**
+
+```md
+{% radio [参数], 文本（支持简单md） %}
+
+颜色: red,yellow,green,cyan,blue,gray
+选中状态: checked
+```
+
+**举例**
+
+```md
+{% radio 纯文本测试 %}
+{% radio checked, 支持简单的 [markdown](https://guides.github.com/features/mastering-markdown/) 语法 %}
+{% radio red, 支持自定义颜色 %}
+{% radio green, 绿色 %}
+{% radio yellow, 黄色 %}
+{% radio cyan, 青色 %}
+{% radio blue, 蓝色 %}
+```
+
+**预览**
 
 {% radio 纯文本测试 %}
 {% radio checked, 支持简单的 [markdown](https://guides.github.com/features/mastering-markdown/) 语法 %}
@@ -293,7 +583,9 @@ center/right/留空
 {% radio cyan, 青色 %}
 {% radio blue, 蓝色 %}
 
-### 3.14 timeline
+{% endfolding %}
+
+### timeline
 
 {% timeline 时间轴样式,blue %}
 
@@ -323,17 +615,38 @@ center/right/留空
 
 {% endtimeline %}
 
-### 3.15 inlineimage
+### inlineimage
+
+{% folding blue, 展开说明 %}
+**语法**
+
+```md
+{% inlineimage 图片链接, height=高度（可选） %}
+
+高度默认为 20px
+```
+
+**举例**
+
+```md
+这是 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/0000.gif %} 一段话。
+
+这又是 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %} 一段话。
+```
+
+**预览**
 
 这是 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/0000.gif %} 一段话。
 
 这又是 {% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %} 一段话。
 
-### 3.16 audio
+{% endfolding %}
+
+### audio TODO
 
 {% audio https://github.com/volantis-x/volantis-docs/releases/download/assets/Lumia1020.mp3 %}
 
-### 3.17 video
+### video
 
 {% videos, 2 %}
 {% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
@@ -467,3 +780,11 @@ Butterfly 主题的各个衍生魔改{% referto '[6]','Butterfly 安装文档:�
 ![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png)
 ![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png)
 {% endcarousel %}
+
+```
+
+```
+
+```
+
+```
