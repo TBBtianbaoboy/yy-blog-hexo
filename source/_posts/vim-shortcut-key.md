@@ -1,10 +1,10 @@
 ---
 title: Hexo Bufferfly 标签外挂汇总
 date: 2023-11-01 19:40:05
-tags: hexo_tag
+tags: hexo_buffergly
 categories: Hexo
 keywords: Hexo 标签外挂, Hexo Bufferfly 标签外挂
-description:
+description: 描述了 Hexo Bufferfly 主题以及第三方插件常用的标签外挂使用方法
 cover: /img/background.jpg # cover image
 copyright:
 copyright_author:
@@ -26,94 +26,140 @@ abcjs:
 
 ### 代码块
 
+{% folding blue, 展开说明 %}
+
 Hexo 有两种方式在文章中插入代码块, 这两种方式呈现相同的效果。
 
 1. codeblock
 
-> 别名: code
+   > 别名: code
 
-**语法**
+   **语法**
 
-```md
-{% codeblock [title] [link_url] [link_text] [lang:language] [mark:line_number] %}
-code snippet
-{% endcodeblock %}
+   ```md
+   {% codeblock [title] [link_url] [link_text] [lang:language] [mark:line_number] %}
+   code snippet
+   {% endcodeblock %}
 
-title: 代码块的标题
-link_url: 代码块标题的链接
-link_text: 代码块标题的链接文本
-lang: 代码块的语言
-mark: 高亮代码块的行号或行号范围
-```
+   title: 代码块的标题
+   link_url: 代码块标题的链接
+   link_text: 代码块标题的链接文本
+   lang: 代码块的语言
+   mark: 高亮代码块的行号或行号范围
+   ```
 
-**举例**
+   **举例**
 
-```md
-{% codeblock 标题 https://github.com Github lang:cpp mark:1,3-4 %}
-#include <iostream>
-int main(){
-std::cout << "demo" << std::endl;
-return 0;
-}
-{% endcodeblock %}
-```
+   ```md
+   {% codeblock 标题 https://github.com Github lang:cpp mark:1,3-4 %}
+   #include <iostream>
+   int main(){
+   std::cout << "demo" << std::endl;
+   return 0;
+   }
+   {% endcodeblock %}
+   ```
 
-**预览**
+   **预览**
 
-{% codeblock 标题 https://github.com Github lang:cpp mark:1,3-4 %}
-#include <iostream>
-int main(){
-std::cout << "demo" << std::endl;
-return 0;
-}
-{% endcodeblock %}
+   {% codeblock 标题 https://github.com Github lang:cpp mark:1,3-4 %}
+   #include <iostream>
+   int main(){
+   std::cout << "demo" << std::endl;
+   return 0;
+   }
+   {% endcodeblock %}
 
 2. 反引号
 
-**语法**
+   **语法**
 
-````md
-```[language] [title] [link_url] [link_text]
-code snippet
-```
+   ````md
+   ```[language] [title] [link_url] [link_text]
+   code snippet
+   ```
 
-title: 代码块的标题
-link_url: 代码块标题的链接
-link_text: 代码块标题的链接文本
-language: 代码块的语言
-````
+   title: 代码块的标题
+   link_url: 代码块标题的链接
+   link_text: 代码块标题的链接文本
+   language: 代码块的语言
+   ````
 
-**举例**
+   **举例**
 
-````md
-```cpp 标题 https://github.com Github
-#include <iostream>
-int main(){
-std::cout << "demo" << std::endl;
-return 0;
-}
-```
-````
+   ````md
+   ```cpp 标题 https://github.com Github
+   #include <iostream>
+   int main(){
+   std::cout << "demo" << std::endl;
+   return 0;
+   }
+   ```
+   ````
 
-**预览**
+   **预览**
 
-```cpp 标题 https://github.com Github
-#include <iostream>
-int main(){
-std::cout << "demo" << std::endl;
-return 0;
-}
-```
+   ```cpp 标题 https://github.com Github
+   #include <iostream>
+   int main(){
+   std::cout << "demo" << std::endl;
+   return 0;
+   }
+   ```
 
 > 个人推荐使用 `反引号` 的方式。
 
-### link
+{% endfolding %}
 
 ### iframe
 
+{% folding blue, 展开说明 %}
+**语法**
+
+```md
+{% iframe <url> [width] [height] %}
+
+url : 外链
+[width] : 直接使用整数，单位是 pixel。建议使用`100%`，即满屏。
+[height] : 直接使用整数，单位是 pixel。建议使用`100%`，即满屏。
+```
+
+**举例**
+
+```md
+{% iframe //player.bilibili.com/player.html?aid=248141899&bvid=BV12v41157Mb&cid=339791117&page=1 %}
+```
+
+**预览**
+
+{% iframe //player.bilibili.com/player.html?aid=248141899&bvid=BV12v41157Mb&cid=339791117&page=1 %}
+
+{% endfolding %}
+
 ## Hexo Bufferfly 主题标签外挂
 
-### button
+### label
+
+{% folding blue, 展开说明 %}
+**语法**
+
+```md
+{% label [text] [color=default] %}
+
+color: blue / pink / red / purple / orange / green
+```
+
+**举例**
+
+```md
+我仿佛{% label 从来没有 blue %} 来过这里。
+```
+
+**预览**
+
+我仿佛{% label 从来没有 blue %} 来过这里。
+
+{% endfolding %}
 
 ## 第三方插件标签外挂
 
@@ -587,33 +633,50 @@ style: simple/modern/flat/disabled
 
 ### timeline
 
-{% timeline 时间轴样式,blue %}
+{% folding blue, 展开说明 %}
+**语法**
 
-<!-- timeline 2020-07-24 [2.6.6 -> 3.0](https://github.com/volantis-x/hexo-theme-volantis/releases) -->
+```md
+{% timeline [标题],[color] %}
 
-1. 如果有 `hexo-lazyload-image` 插件，需要删除并重新安装最新版本，设置 `lazyload.isSPA: true`。
-2. 2.x 版本的 css 和 js 不适用于 3.x 版本，如果使用了 `use_cdn: true` 则需要删除。
-3. 2.x 版本的 fancybox 标签在 3.x 版本中被重命名为 gallery 。
-4. 2.x 版本的置顶 `top: true` 改为了 `pin: true`，并且同样适用于 `layout: page` 的页面。
-5. 如果使用了 `hexo-offline` 插件，建议卸载，3.0 版本默认开启了 pjax 服务。
+<!-- timeline 时间节点 [标题] -->
 
-<!-- endtimeline -->
-
-<!-- timeline 2020-05-15 [2.6.3 -> 2.6.6](https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.6) -->
-
-不需要额外处理。
-
-<!-- endtimeline -->
-
-<!-- timeline 2020-04-20 [2.6.2 -> 2.6.3](https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3) -->
-
-1. 全局搜索 `seotitle` 并替换为 `seo_title`。
-2. group 组件的索引规则有变，使用 group 组件的文章内，`group: group_name` 对应的组件名必须是 `group_name`。
-3. group 组件的列表名优先显示文章的 `short_title` 其次是 `title`。
+正文内容
 
 <!-- endtimeline -->
 
 {% endtimeline %}
+
+color: blue / pink / red / purple / orange / green
+```
+
+**举例**
+
+```md
+{% timeline 时间轴样式,blue %}
+
+<!-- timeline 2020-04-20 [github](https://github.com) -->
+
+正文内容
+
+<!-- endtimeline -->
+
+{% endtimeline %}
+```
+
+**预览**
+
+{% timeline 时间轴样式,blue %}
+
+<!-- timeline 2020-04-20 [github](https://github.com) -->
+
+正文内容
+
+<!-- endtimeline -->
+
+{% endtimeline %}
+
+{% endfolding %}
 
 ### inlineimage
 
@@ -642,11 +705,57 @@ style: simple/modern/flat/disabled
 
 {% endfolding %}
 
-### audio TODO
+### audio
+
+{% folding blue, 展开说明 %}
+**语法**
+
+```md
+{% audio 音频链接 %}
+```
+
+**举例**
+
+```md
+{% audio https://github.com/volantis-x/volantis-docs/releases/download/assets/Lumia1020.mp3 %}
+```
+
+**预览**
 
 {% audio https://github.com/volantis-x/volantis-docs/releases/download/assets/Lumia1020.mp3 %}
 
+{% endfolding %}
+
 ### video
+
+{% folding blue, 展开说明 %}
+**语法**
+
+```md
+{% videos, <列数>, [对齐方式] %}
+{% video <链接> %}
+{% endvideos %}
+
+或
+
+{% video <链接> %}
+
+对齐方式: left, center, right
+列数: 1-4 列
+```
+
+**举例**
+
+```md
+{% videos, 2 %}
+{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
+{% endvideos %}
+```
+
+**预览**
 
 {% videos, 2 %}
 {% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
@@ -655,46 +764,92 @@ style: simple/modern/flat/disabled
 {% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov %}
 {% endvideos %}
 
-### 3.18 folding
+{% endfolding %}
 
-{% folding 查看图片测试 %}
+### folding
+
+{% folding blue, 展开说明 %}
+{% tip info %}支持嵌套使用{% endtip %}
+**语法**
+
+```md
+{% folding [color] [statu], <标题> %}
+折叠内容
+{% endfolding %}
+
+color: blue, cyan, green, yellow, red
+statu: open 代表打开。
+```
+
+**举例**
+
+```md
+{% folding cyan, 查看图片测试 %}
+
+![](https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg)
+
+{% endfolding %}
+```
+
+**预览**
+
+{% folding cyan, 查看图片测试 %}
 
 ![](https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg)
 
 {% endfolding %}
 
-{% folding cyan open, 查看默认打开的折叠框 %}
-
-这是一个默认打开的折叠框。
-
 {% endfolding %}
 
-{% folding green, 查看代码测试 %}
-假装这里有代码块（代码块没法嵌套代码块）
-{% endfolding %}
+### tabs
 
-{% folding yellow, 查看列表测试 %}
+{% folding blue, 展开说明 %}
+**语法**
 
-- haha
-- hehe
+```md
+{% tabs <name>, [index] %}
 
-{% endfolding %}
+<!-- tab [tab_name] [@icon] -->
 
-{% folding red, 查看嵌套测试 %}
+tab 内容
 
-{% folding blue, 查看嵌套测试2 %}
+<!-- endtab -->
 
-{% folding 查看嵌套测试3 %}
+{% endtabs %}
 
-hahaha <span><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/tieba/%E6%BB%91%E7%A8%BD.png' style='height:24px'></span>
+name: 唯一标识符
+index: 默认打开哪个 tab, 下标从 1 开始
+tab_name: tab 名称
+icon: font awesome 图标
+```
 
-{% endfolding %}
+**举例**
 
-{% endfolding %}
+```md
+{% tabs test4,2 %}
 
-{% endfolding %}
+<!-- tab 第一个Tab -->
 
-### 3.19 tabs
+**tab 名字为第一个 Tab**
+
+<!-- endtab -->
+
+<!-- tab @fab fa-apple-pay -->
+
+**只有图标 没有 Tab 名字**
+
+<!-- endtab -->
+
+<!-- tab 炸弹@fas fa-bomb -->
+
+**名字+icon**
+
+<!-- endtab -->
+
+{% endtabs %}
+```
+
+**预览**
 
 {% tabs test4,2 %}
 
@@ -718,55 +873,42 @@ hahaha <span><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/tieba/%E
 
 {% endtabs %}
 
-### 3.20 alibaba icon
+{% endfolding %}
 
-{% icon icon-rat_zi %}{% icon icon-rat,2 %}
+### 旋转相册 carousel
 
-{% icon icon-ox_chou,3 %}{% icon icon-ox,4 %}
+{% folding blue, 展开说明 %}
+**语法**
 
-{% icon icon-tiger_yin,5 %}{% icon icon-tiger,6 %}
+```md
+{% carousel [Id] , [name] %}
+![](/img/1.jpg)
+![](/img/2.jpg)
+![](/img/3,jpg)
+{% endcarousel %}
 
-{% icon icon-rabbit_mao,1 %}{% icon icon-rabbit,2 %}
+Id: 相册唯一 ID，用于监测相册鼠标动作。禁止使用中文。同一页内不得出现相同 ID 的 carousel 相册。
+name: 相册中间显示的内容，建议用英文单引号包裹。
+```
 
-{% icon icon-dragon_chen,3 %}{% icon icon-dragon,4 %}
+**举例**
 
-{% icon icon-snake_si,5 %}{% icon icon-snake,6 %}
+```md
+{% carousel 'SF','strike freedom' %}
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png)
+{% endcarousel %}
+```
 
-{% icon icon-horse_wu %}{% icon icon-horse,2 %}
-
-{% icon icon-goat_wei,3 %}{% icon icon-goat,4 %}
-
-{% icon icon-monkey_shen,5 %}{% icon icon-monkey,6 %}
-
-{% icon icon-rooster_you %}{% icon icon-rooster,2 %}
-
-{% icon icon-dog_xu,3 %}{% icon icon-dog,4 %}
-
-{% icon icon-boar_hai,5 %}{% icon icon-boar,6 %}
-
-### 3.21 气泡注释 bubble
-
-最近我学到了不少新玩意儿（虽然对很多大佬来说这些已经是旧技术了），比如 CSS 的{% bubble 兄弟相邻选择器,"例如 h1 + p {margin-top:50px;}" %}，{% bubble flex布局,"Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性","#ec5830" %}，{% bubble transform变换,"transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。","#1db675" %}，animation 的{% bubble 贝塞尔速度曲线,"贝塞尔曲线(Bézier curve)，又称贝兹曲线或贝济埃曲线，是应用于二维图形应用程序的数学曲线。一般的矢量图形软件通过它来精确画出曲线，贝兹曲线由线段与节点组成，节点是可拖动的支点，线段像可伸缩的皮筋","#de4489" %}写法，还有今天刚看到的{% bubble clip-path,"clip-path属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。","#868fd7" %}属性。这些对我来说很新颖的概念狠狠的冲击着我以前积累起来的设计思路。
-
-### 3.22 reference
-
-Akilar の糖果屋(akilar.top)是一个私人性质的博客{% referto '[1]','Akilarの糖果屋群聊简介' %}，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用 Hexo 框架{% referto '[2]','Hexo中文文档' %}，Butterfly 主题{% referto '[3]','Butterfly 安装文档(一) 快速开始' %}
-
-本项目参考了 Volantis{% referto '[4]','hexo-theme-volantis 标签插件' %}的标签样式。引入`[tag].js`，并针对`butterfly`主题修改了相应的`[tag].styl`。在此鸣谢`Volantis`主题众开发者。
-主要参考内容包括各个 volantis 的内置标签插件文档{% referto '[5]','Volantis文档:内置标签插件' %}
-Butterfly 主题的各个衍生魔改{% referto '[6]','Butterfly 安装文档:标签外挂（Tag Plugins' %}{% referto '[7]','小弋の生活馆全样式预览' %}{% referto '[8]','l-lin-font-awesome-animation' %}{% referto '[9]','小康的butterfly主题使用文档' %}
-
-{% referfrom '[1]','Akilarの糖果屋群聊简介','https://jq.qq.com/?_wv=1027&k=pGLB2C0N' %}
-{% referfrom '[2]','Hexo中文文档','https://hexo.io/zh-cn/docs/' %}
-{% referfrom '[3]','Butterfly 安装文档(一) 快速开始','https://butterfly.js.org/posts/21cfbf15/' %}
-{% referfrom '[4]','hexo-theme-volantis 标签插件','https://volantis.js.org/v5/tag-plugins/' %}
-{% referfrom '[5]','Volantis文档:内置标签插件','https://volantis.js.org/tag-plugins/' %}
-{% referfrom '[6]','Butterfly 安装文档:标签外挂（Tag Plugins','https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89' %}
-{% referfrom '[7]','小弋の生活馆全样式预览','https://lovelijunyi.gitee.io/posts/c898.html' %}
-{% referfrom '[8]','l-lin-font-awesome-animation','https://github.com/l-lin/font-awesome-animation' %}
-{% referfrom '[9]','小康的butterfly主题使用文档','https://www.antmoe.com/posts/3b43914f/' %}
-
-### 3.23 旋转相册 carousel
+**预览**
 
 {% carousel 'SF','strike freedom' %}
 ![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png)
@@ -781,10 +923,4 @@ Butterfly 主题的各个衍生魔改{% referto '[6]','Butterfly 安装文档:�
 ![](https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png)
 {% endcarousel %}
 
-```
-
-```
-
-```
-
-```
+{% endfolding %}
