@@ -235,9 +235,9 @@ aside:
       icon: fa-solid fa-person-digging
       text: 正在路上
       link: 
-  card_announcement: # 公告
+  card_announcement: # 公告 TODO
     enable: true
-    content: 该博客网站正在开发中...
+    content: 内容需要时间...
   card_recent_post: # 最新文章
     enable: true
     limit: 5 # if set 0 will show all
