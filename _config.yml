@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://tbbtianbaoboy.github.io
+url: https://www.yyleng.cn
 permalink: :category/:name/
 permalink_defaults:
 pretty_urls:
@@ -102,13 +102,15 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: butterfly
 
-# Deployment
-## npm install hexo-deployer-git --save
-## Docs: https://hexo.io/docs/one-command-deployment
-## hexo deploy -m "custom comment"
+# Deployment To Nginx
+## Install: npm install hexo-deployer-git --save
+## Deploy: hexg g -d
 deploy:
   type: git
-  repo: git@github.com:TBBtianbaoboy/tbbtianbaoboy.github.io.git
+  ## github page
+  # repo: git@github.com:TBBtianbaoboy/tbbtianbaoboy.github.io.git
+  ## linux server
+  repo: git@1.12.44.71:/www/repo/hexo.git
   branch: master
 
 search:
