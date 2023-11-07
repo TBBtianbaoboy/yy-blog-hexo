@@ -36,8 +36,8 @@ code_word_wrap: false
 # formal:
 #   icon: link || the description || color
 social: # TODO
-  fab fa-github: https://github.com/TBBtianbaoboy || Github || '#24292e'
-  fas fa-envelope: mailto:2237616014@qq.com || Email || '#4a7dbe'
+  fab fa-github: https://github.com/ || Github || '#24292e'
+  fas fa-envelope: mailto:aico@yyleng.com || Email || '#4a7dbe'
 
 
 # 图片设置
