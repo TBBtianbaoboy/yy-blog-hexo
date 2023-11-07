@@ -643,7 +643,7 @@ text_align_justify: false
 # 设置网站背景图
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: url(https://yangyuleng.gitee.io/yyimgs/img/home_page.jpg)
+background: url(https://yangyuleng.gitee.io/yyimgs/img/hexo.png)
 
 # 页脚 Background
 footer_bg: transparent
