@@ -5,7 +5,7 @@ tags: hexo_buffergly
 categories: Hexo
 keywords: Hexo 标签外挂, Hexo Bufferfly 标签外挂
 description: 描述了 Hexo Bufferfly 主题以及第三方插件常用的标签外挂使用方法
-cover: /img/background.jpg # cover image
+cover: https://yangyuleng.gitee.io/yyimgs/img/hexo.png # cover image
 copyright:
 copyright_author:
 copyright_author_href:
